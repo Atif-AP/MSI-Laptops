@@ -1,7 +1,30 @@
 .container{
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3%;
+    background-color: rgba(144, 14, 14, 0.745);
 }
 
-.site{}
+.site{
+    padding: 3%;
+}
 
-.info{}
+.facebook{
+    background-image: url("../images/facebook.svg");
+}
+
+.instagram{ 
+    background-image: url("../images/instagram.svg");
+}
+
+.facebook:hover, .instagram:hover{
+    transform: scale(1.1);
+}
+
+.facebook,.instagram{
+    background-size: 30px 30px;
+    height: 30px;
+    width: 30px;
+    transition: transform 0.2s;
+}

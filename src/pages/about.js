@@ -1,8 +1,6 @@
-// Stap 1: Importeer React
 import * as React from 'react'
 import Layout from '../components/layout'
 
-// Step 2: Definieer je component
 const AboutPage = () => {
   return (
     <Layout pageTitle="About Us">
@@ -11,5 +9,4 @@ const AboutPage = () => {
   )
 }
 
-// Stap 3: Exporteer je component
 export default AboutPage

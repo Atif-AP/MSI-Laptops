@@ -36,3 +36,9 @@
 .titleMtg{
     text-shadow: 3px 3px rgb(1, 1, 1);
 }
+
+p{
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+}

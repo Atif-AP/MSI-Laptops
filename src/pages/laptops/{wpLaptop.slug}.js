@@ -2,7 +2,7 @@ import * as React from 'react'
 import Layout from "../../components/layout";
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { graphql } from 'gatsby'
-import {container} from "./page.module.css"
+import {container, img, desc, title} from "./page.module.css"
 
 export const query = graphql`
 query ($slug: String) {
@@ -20,7 +20,7 @@ query ($slug: String) {
       picture {
         localFile {
           childImageSharp {
-            gatsbyImageData(placeholder: BLURRED)
+            gatsbyImageData(quality: 100, placeholder: BLURRED)
           }
         }
         altText
@@ -42,11 +42,11 @@ const LaptopsPage = ({data: {wpLaptop: {msiLaptopsFields: laptop, types: {nodes:
     <Layout pageTitle="Laptops Template">
         <div>
           <div className={container}>
-            <div>
+            <div className={img}>
               <GatsbyImage image={image} alt={laptop.picture.altText}/>
             </div>
-            <div>
-              <h1>{laptop.title}</h1>
+            <div className={desc}>
+              <h1 className={title}>{laptop.title}</h1>
               <div>
                 {types.map((type, i) => (
                   <span key={i}>

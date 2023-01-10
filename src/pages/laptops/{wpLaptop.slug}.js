@@ -15,9 +15,6 @@ query ($slug: String) {
       screenSize
       title
       typeOfStorage
-      picture {
-        sourceUrl
-      }
     }
   }
 }

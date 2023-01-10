@@ -1,0 +1,4 @@
+.mtg {
+    display: flex;
+    flex-direction: row;
+}

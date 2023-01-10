@@ -1,10 +1,46 @@
+import { graphql } from 'gatsby'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import * as React from 'react'
 import Layout from '../components/layout'
+import {} from './about.module.css'
 
-const AboutPage = () => {
+export const query = graphql`
+query {
+  wpPage(slug: {eq: "about-us"}) {
+    aboutUsFields {
+      missionToGamers
+      missionToGamersTitle
+      ourStory
+      ourStoryTitle
+      missionToGamersImage {
+        localFile {
+          childImageSharp {
+            gatsbyImageData(placeholder: BLURRED)
+          }
+        }
+        altText
+      }
+    }
+  }
+}`
+
+
+const AboutPage = ({data: {wpPage: {aboutUsFields}}}) => {
+  const image = getImage(aboutUsFields.missionToGamersImage.localFile)
+
   return (
     <Layout pageTitle="About Us">
-      <p>Artist Agency was founded in 1977 by founder, John Doe. AA continues to be at the forefront of art by establishing the careers of our talents on a holistic level -- and setting trends within the industry. </p>
+      <div>
+        <h1>{aboutUsFields.ourStoryTitle}</h1>
+        <p dangerouslySetInnerHTML={{__html: aboutUsFields.ourStory}}/>
+      </div>
+      <div>
+        <div>
+          <h1>{aboutUsFields.missionToGamersTitle}</h1>
+          <p dangerouslySetInnerHTML={{__html: aboutUsFields.missionToGamers}}/>
+        </div>
+        <GatsbyImage image={image} alt={aboutUsFields.missionToGamersImage.altText} />
+      </div>
     </Layout>
   )
 }

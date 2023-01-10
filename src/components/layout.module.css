@@ -28,16 +28,25 @@
     -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
     font-feature-settings: "kern", "liga", "clig", "calt";
   }
-  
-  .container {
-    width: 90%;
-    max-width: 1080px;
-    margin: auto;
-    font-family: sans-serif;
+
+  .header{
+    display: flex;
+    width: 100%;
   }
   
   .nav {
     display: flex;
+    justify-content: flex-end;
+    width: 80%;
+    text-shadow: 3px 3px rgb(169, 8, 8);
+    font-size: 23px;
+  }
+
+  .title{
+    width: 20%;
+    text-align: center;
+    align-self: center;
+    text-shadow: 3px 3px rgb(169, 8, 8);
   }
   
   .nav-links {

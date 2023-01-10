@@ -1,7 +1,9 @@
 import * as React from 'react'
 import Layout from '../components/layout'
+import Laptop from '../components/laptop'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { graphql } from 'gatsby'
+import { featured, bio, img } from "./index.module.css"
 
 export const query = graphql`
 query {
@@ -46,15 +48,14 @@ const IndexPage = ({data: {wpPage: {homePageFields}}}) => {
     <main>
       <Layout>
         <section>
-          <h1>{homePageFields.title}</h1>
-          <GatsbyImage image={image} alt={homePageFields.picture.altText}/>
+          <GatsbyImage className={img} image={image} alt={homePageFields.picture.altText}/>
         </section>
         <section>
-          <h2 dangerouslySetInnerHTML={{__html: homePageFields.description}}/>
+          <h4 className={bio} dangerouslySetInnerHTML={{__html: homePageFields.description}}/>
         </section>
-        <section>
+        <section className={featured}>
           {homePageFields.featuredProducts.map(laptop => {
-            return "Hier komt iets"
+            return <Laptop slug={`laptops/${laptop.slug}`} key={laptop.id} laptop={laptop} />
           })}
         </section>
       </Layout>

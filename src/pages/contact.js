@@ -22,11 +22,11 @@ const ContactPage = ({data: {wpPage: {contactUsFields: contact}}}) => {
         <Layout>
             <div className={form}>
                 <form name="contact" method="POST" data-netlify="true">
-                    <label>Your name:</label>
+                    <label htmlFor="name">Your name:</label>
                     <input type="text" name="name" required={true}></input>
-                    <label>Your Email:</label>
+                    <label htmlFor="email">Your Email:</label>
                     <input type="email" name="email" required={true}></input>
-                    <label>Message:</label>
+                    <label htmlFor="message">Message:</label>
                     <textarea name="message" required={true}></textarea>
                     <input type="hidden" name="form-name" value="contact"></input>
                     <button type="submit">Send</button>

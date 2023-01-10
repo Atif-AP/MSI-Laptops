@@ -1,5 +1,5 @@
 import React from "react";
-import {container,site,info,facebook,instagram} from "./footer.module.css"
+import {container,site,facebook,instagram} from "./footer.module.css"
 
 const Footer = ({ siteTitle, companyInfo}) => {
     return (
@@ -7,7 +7,7 @@ const Footer = ({ siteTitle, companyInfo}) => {
             <div className={site}>
                 <p>{siteTitle}</p>
             </div>
-            <div className={info}>
+            <div>
                 <p>{`${companyInfo.address}, ${companyInfo.zipCode} ${companyInfo.city}`}</p>
                 <div>
                     Follow us:

@@ -1,7 +1,8 @@
 import React from "react";
 
 const Footer = ({ siteTitle, companyInfo}) => {
-    <footer>
+    return (
+        <footer>
         <div>
             <p>{siteTitle}</p>
         </div>
@@ -20,6 +21,8 @@ const Footer = ({ siteTitle, companyInfo}) => {
             </div>
         </div>
     </footer>
+
+    )
 }
 
 export default Footer;

@@ -2,9 +2,10 @@
     display: flex;
     flex-direction: row;
     width: 90%;
-    background-color: red;
+    background-color: rgba(144, 14, 14, 0.745);
     margin: auto;
     padding: 2%;
+    margin-bottom: 20px;
 }
 
 .mtg > div {
@@ -26,7 +27,7 @@
 .img {
     height: 500;
     border: solid 1px black;
-    box-shadow: 4px 4px red, 8px 8px black;
+    box-shadow: 8px 8px red, 16px 16px black;
 }
 
 .titleStory{
@@ -34,7 +35,7 @@
 }
 
 .titleMtg{
-    text-shadow: 3px 3px rgb(1, 1, 1);
+    text-shadow: 6px 3px rgb(1, 1, 1);
 }
 
 p{

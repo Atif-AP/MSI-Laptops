@@ -50,7 +50,12 @@ const IndexPage = ({data: {wpPage: {homePageFields}}}) => {
           <GatsbyImage image={image} alt={homePageFields.picture.altText}/>
         </section>
         <section>
-
+          <h2 dangerouslySetInnerHTML={{__html: homePageFields.description}}/>
+        </section>
+        <section>
+          {homePageFields.featuredProducts.map(laptop => {
+            return "Hier komt iets"
+          })}
         </section>
       </Layout>
     </main>

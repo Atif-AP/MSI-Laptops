@@ -1,26 +1,57 @@
 import * as React from 'react'
 import Layout from '../components/layout'
-import { StaticImage } from 'gatsby-plugin-image'
-import { useStaticQuery, graphql } from 'gatsby'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { graphql } from 'gatsby'
 
-const IndexPage = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
+export const query = graphql`
+query {
+  wpPage(slug: {eq: "home"}) {
+    homePageFields {
+      description
+      title
+      picture {
+        localFile {
+          childImageSharp {
+            gatsbyImageData(placeholder: BLURRED)
+          }
+        }
+      }
+      featuredProducts {
+        ... on WpLaptop {
+          id
+          msiLaptopsFields {
+            description
+            picture {
+              altText
+              localFile {
+                childImageSharp {
+                  gatsbyImageData(placeholder: BLURRED)
+                }
+              }
+            }
+            title
+          }
+          slug
         }
       }
     }
-  `)
+  }
+}
+`
+
+const IndexPage = ({data: {wpPage: {homePageFields}}}) => {
+  const image = getImage(homePageFields.picture.localFile)
+
   return (
     <main>
-      <Layout pageTitle={data.site.siteMetadata.title}>
-      <p>Lorem ipsum</p>
-      <StaticImage
-        alt="randomized unsplash image!"
-        src="../images/halloween.jpg"
-      />
+      <Layout>
+        <section>
+          <h1>{homePageFields.title}</h1>
+          <GatsbyImage image={image} alt={homePageFields.picture.altText}/>
+        </section>
+        <section>
+
+        </section>
       </Layout>
     </main>
   )

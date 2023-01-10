@@ -14,7 +14,8 @@ const Layout = ({ pageTitle, children }) => {
   `)
   return (
     <div className={container}>
-      <title>{data.site.siteMetadata.title}</title>
+      <title>{pageTitle} | {data.site.siteMetadata.title}</title>
+      <h1>{data.site.siteMetadata.title}</h1>
       <nav className={nav}>
         <ul className={navLinks}>
           <li className={navLinkItem}>
@@ -35,7 +36,6 @@ const Layout = ({ pageTitle, children }) => {
         </ul>
       </nav>
       <main>
-        <h1>{pageTitle}</h1>
         {children}
       </main>
     </div>

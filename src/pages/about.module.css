@@ -1,4 +1,38 @@
 .mtg {
     display: flex;
     flex-direction: row;
+    width: 90%;
+    background-color: red;
+    margin: auto;
+    padding: 2%;
+}
+
+.mtg > div {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.story{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding: 3%;
+}
+
+.img {
+    height: 500;
+    border: solid 1px black;
+    box-shadow: 4px 4px red, 8px 8px black;
+}
+
+.titleStory{
+    text-shadow: 3px 3px rgb(169, 8, 8);
+}
+
+.titleMtg{
+    text-shadow: 3px 3px rgb(1, 1, 1);
 }
